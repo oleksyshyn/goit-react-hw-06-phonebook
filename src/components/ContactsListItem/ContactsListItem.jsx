@@ -1,21 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import css from './ContactsListItem.module.css';
+// import React from 'react';
+// import { useRef } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { addContact, deleteContact } from 'redux/slice';
+// import PropTypes from 'prop-types';
+// import css from './ContactsListItem.module.css';
 
-function ContactsListItem({ contactId, name, number, onDeleteContact }) {
-    return (
-        <li className={css.contacts_list_item}>
-            <p className={css.contact}>{name}: {number}</p>
-            <button className={css.button} onClick={() => onDeleteContact(contactId)}>Delete</button>
-        </li>
-    )
-}
+// function ContactsListItem() {
+//     const contacts = useSelector(state => state.contacts);
+  
 
-export default ContactsListItem;
+//     return (
+//         <li className={css.contacts_list_item}>
+//             <p className={css.contact}>{name}: {number}</p>
+//             <button className={css.button} onClick={deleteContactHandler}>Delete</button>
+//         </li>
+//     )
+// }
 
-ContactsListItem.propTypes = {
-    contactId: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-    onDeleteContact: PropTypes.func.isRequired,
-};
+// export default ContactsListItem;
+
+// ContactsListItem.propTypes = {
+//     contactId: PropTypes.string.isRequired,
+//     name: PropTypes.string.isRequired,
+//     number: PropTypes.string.isRequired,
+//     onDeleteContact: PropTypes.func.isRequired,
+// };
