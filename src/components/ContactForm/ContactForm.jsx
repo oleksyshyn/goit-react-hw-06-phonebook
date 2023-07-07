@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
 import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
+import PropTypes from 'prop-types';
 
 function ContactForm() {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
 
-    const contacts = useSelector(state => state.contacts);
+    const contacts = useSelector(state => state.contacts.contacts);
     const dispatch = useDispatch();
 
     const handleNameChange = (e) => {
@@ -69,3 +70,8 @@ function ContactForm() {
 }
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+    name: PropTypes.string,
+    number: PropTypes.number,
+};

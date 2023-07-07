@@ -5,14 +5,13 @@ import css from './ContactsList.module.css';
 import PropTypes from 'prop-types';
 
 function ContactsList() {
-    const contacts = useSelector(state => state.contacts);
-    const filter = useSelector(state => state.filter);
+    const contacts = useSelector(state => state.contacts.contacts);
+    const filter = useSelector(state => state.contacts.filter);
     const dispatch = useDispatch();
     
     const deleteContactHandler = (id) => {
         dispatch(deleteContact(id));
     }
-    console.log(contacts);
     
     const filteredContacts = contacts.filter(contact =>
         contact.name.toLowerCase().includes(filter.toLowerCase())

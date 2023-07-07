@@ -1,7 +1,7 @@
 import React from 'react';
-import { setFilter } from 'redux/filterSlice';
+import { setFilter } from 'redux/contactsSlice';
 import { useSelector, useDispatch } from 'react-redux';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import css from './Filter.module.css';
 
 function Filter() {
@@ -26,6 +26,6 @@ function Filter() {
 
 export default Filter;
 
-// Filter.propTypes = {
-//   value: PropTypes.string,
-// };
+Filter.propTypes = {
+  filter: PropTypes.string,
+};
