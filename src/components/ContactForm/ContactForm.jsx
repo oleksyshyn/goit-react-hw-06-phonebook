@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'redux/slice';
+import { addContact } from 'redux/contactsSlice';
 import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
 
@@ -8,7 +8,7 @@ function ContactForm() {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
 
-    const contacts = useSelector(state => state.contacts.contacts);
+    const contacts = useSelector(state => state.contacts);
     const dispatch = useDispatch();
 
     const handleNameChange = (e) => {
@@ -28,7 +28,6 @@ function ContactForm() {
             alert(`${newContact.name} is already in contacts!`);
             return;
         }
-        // setContacts(prevContacts => [...prevContacts, newContact]);
         dispatch(addContact(newContact));
         setName('');
         setNumber('');
